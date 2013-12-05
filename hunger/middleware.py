@@ -52,11 +52,7 @@ class BetaMiddleware(object):
             from django.contrib.flatpages.views import flatpage
             return flatpage(request, request.path_info)
 
-        whitelisted_modules = ['django.contrib.auth.views',
-                               'django.contrib.admin.sites',
-                               'django.views.static',
-                               'django.contrib.staticfiles.views',
-                               'hunger.views']
+        whitelisted_modules = []
 
         short_name = view_func.__class__.__name__
         if short_name == 'function':
